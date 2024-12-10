@@ -15,6 +15,44 @@
         align-items: center;
       }
 
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0px 20px;
+      }
+      .logo {
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex; /* Makes the list horizontal */
+        gap: 15px; /* Space between items */
+      }
+      nav ul li {
+        margin: 0;
+      }
+      header {
+        background-color: #d32f2f; /* Christmas Red */
+        padding: 10px 0;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px; /* Slightly larger text */
+        padding: 8px 12px; /* Increased padding around links */
+      }
+      nav ul li a:hover {
+        background-color: #a51d24; /* Darker red for hover effect */
+        border-radius: 5px;
+      }
       h1 {
         margin: 20px 0;
       }
@@ -89,6 +127,19 @@
         right: 10px;
       }
     </style>
+    <header>
+      <nav>
+        <a href="project.html" class="logo">One Stop Christmas Shop</a>
+        <ul>
+          <li><a href="project.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="cart.html">Shopping Cart</a></li>
+        </ul>
+      </nav>
+    </header>
   </head>
   <body>
     <h1>Interactive Image Gallery</h1>
