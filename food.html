@@ -8,9 +8,7 @@
     <meta name="author" content="Your Name" />
 
     <title>One Stop Christmas Shop</title>
-
     <link rel="stylesheet" href="styles.css" />
-
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <style>
       body {
@@ -57,6 +55,30 @@
       ul li a i {
         font-size: 18px;
       }
+
+      .product {
+        width: 150px;
+        text-align: center;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        padding: 10px;
+      }
+      .product-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        padding: 10px;
+      }
+      .product img {
+        width: 100%;
+        height: auto;
+      }
+      .product .price {
+        font-size: 1.2em;
+        color: #555;
+      }
     </style>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -77,9 +99,6 @@
           <li><a href="contact.html">Contact</a></li>
           <li><a href="login.html">Login</a></li>
           <li><a href="gallery.html">Gallery</a></li>
-          <li>
-            <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-          </li>
         </ul>
       </nav>
     </header>
@@ -90,6 +109,30 @@
         This is a basic HTML skeleton to get you started with your web
         development project.
       </p>
+
+      <div class="product-container">
+        <div class="product">
+          <img
+            src="https://realfood.tesco.com/media/images/Christmas-pudding-1400x919-83e9e78e-75b9-4fae-bb2f-907a75863902-0-1400x919.jpg"
+            alt="Christmas Pudding"
+          />
+          <p class="price">$30</p>
+        </div>
+        <div class="product">
+          <img
+            src="https://glutenfreecuppatea.co.uk/wp-content/uploads/2020/10/gluten-free-christmas-cake-recipe-featured.jpg"
+            alt="Christmas Cake"
+          />
+          <p class="price">$25</p>
+        </div>
+        <div class="product">
+          <img
+            src="https://www.recipetineats.com/tachyon/2017/12/Christmas-Trifle-3-SQ.jpg"
+            alt="Christmas Trifle"
+          />
+          <p class="price">$20</p>
+        </div>
+      </div>
 
       <section>
         <h2>Section Title</h2>
