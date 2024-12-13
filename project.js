@@ -72,3 +72,17 @@ async function removeFromCart(index) {
   });
   renderCart();
 }
+
+// Add an item to the cart and save to local storage
+function addToCart(name, price) {
+  // Get existing cart data from local storage
+  const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+  // Add the new item
+  cartItems.push({ name, price });
+
+  // Save updated cart data back to local storage
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+  alert(`${name} has been added to your cart!`);
+}

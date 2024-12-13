@@ -10,7 +10,6 @@
     <title>One Stop Christmas Shop</title>
 
     <link rel="stylesheet" href="styles.css" />
-
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <style>
       body {
@@ -57,15 +56,146 @@
       ul li a i {
         font-size: 18px;
       }
+
+      /* Carousel Styling */
+      .carousel-inner {
+        width: 100%; /* Ensure the carousel container takes full width */
+        align-items: center;
+      }
+
+      .carousel-item img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover; /* Ensure image maintains its aspect ratio */
+        display: block;
+        margin: 0 auto; /* Center the image horizontally */
+      }
+
+      /* Carousel Controls */
+      .carousel-inner {
+        position: relative; /* Allow absolute positioning within */
+      }
+
+      .carousel-control-next {
+        position: absolute;
+        top: 50%;
+        z-index: 1;
+      }
+
+      .carousel-control-prev {
+        position: absolute;
+        top: 50%;
+        z-index: 1;
+      }
+
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        background-color: black;
+      }
+
+      /* Product Listings Section */
+      
+      .listings-container {
+        background-color: #d32f2f;
+        width: 90%;
+        margin: 0 auto;
+        border-radius: 15px;
+        overflow: hidden;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 40px;
+      }
+
+      /* Grid Layout for Product Cards (Default Layout) */
+      .grid-view .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .grid-view .col {
+        flex: 1 1 calc(33.333% - 10px);
+      }
+
+      /* List Layout for Porduct Cards (New Layout) */
+      .list-view .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .list-view .col {
+        width: 80%;
+        margin-bottom: 10px;
+      }
+
+      /* "Our Products" text box */
+      .header-container {
+        position: relative;
+      }
+
+      .header-container h2 {
+        flex-grow: 1;
+        text-align: center;
+      }
+
+      /* Switch Layout Button*/
+      #toggleViewBtn {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #d4af37;
+        border-color: black;
+        color: black;
+      }
+
+      /* "View Details" Product Card Buttons*/
+      .card-body .btn {
+        background-color: #ffdf78; /* Set button color */
+        border-color: black;
+        color: black; /* Ensure text is visible */
+      }
+
+      .card-body .btn:hover {
+        background-color: #ffca28; /* Set a darker shade for hover effect */
+        border-color: black;
+        color: black; /* Keep text color consistent on hover */
+      }
+
+      /* "View Details" Module popup */
+      .modal-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #FF7F7F;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border: none;
+      }
+
+      .modal-body img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .modal-header {
+        background-color: #ff5733; /* Change to your desired color */
+        border: none;
+      }
     </style>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
     />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   </head>
 
   <body>
     <header>
+
+      <!-- Navbar -->
       <nav>
         <a href="project.html" class="logo">One Stop Christmas Shop</a>
         <ul>
@@ -84,28 +214,308 @@
       </nav>
     </header>
 
-    <main>
-      <h1>Welcome to One Stop Christmas Shop</h1>
-      <p>
-        This is a basic HTML skeleton to get you started with your web
-        development project.
-      </p>
+    <main style="margin-top: 0;">
 
-      <section>
-        <h2>Section Title</h2>
-        <p>Content for this section goes here.</p>
-      </section>
+      <!-- Page Title Strip -->
+      <div class="container-fluid" style="padding-top: 0;">
+        <div class="row justify-content-center">
+          <div class="col-12 text-black p-4" style="background-color: #d4af37; opacity: 0.8;">
+            <h5 class="text-center">❄️❄️❄️The One Stop Shop for Christmas Food and Recipes❄️❄️❄️</h5>
+          </div>
+        </div>
+      </div>
+  <div class="pb-4" style="background-color: #FF7F7F;">
+      <h1 class="text-center mb-4 pt-5">Featured Recipes</h1>
 
-      <section>
-        <h2>Another Section</h2>
-        <p>Additional content can go here.</p>
-      </section>
-    </main>
+    
+      <!-- Featured Products Slider -->
+      <div id="featuredProductsCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <!-- First Image -->
+          <div class="carousel-item active">
+            <img src="Images/Ham.jpg" class="d-block rounded"
+              alt="Featured Product 1: A Traditional Roasted Ham">
+          </div>
+          <!-- Second Image -->
+          <div class="carousel-item">
+            <img src="Images/Turkey.jpg" class="d-block rounded"
+              alt="Featured Product 2: A Traditional Christmas Turkey">
+          </div>
+          <!-- Third Image -->
+          <div class="carousel-item">
+            <img src="Images/Wine.jpg" class="d-block rounded"
+              alt="Featured Product 3: A warm glass of Mulled Wine">
+          </div>
+          <!-- Fourth Image -->
+          <div class="carousel-item">
+            <img src="Images/Cake.jpeg" class="d-block rounded"
+              alt="Featured Product 4: A Christmas Cake">
+          </div>
+          <!-- Fifth Image -->
+          <div class="carousel-item">
+            <img src="Images/Pudding.jpg" class="d-block rounded"
+              alt="Featured Product 5: A Christmas Pudding">
+          </div>
+          <div class="carousel-item">
+            <img src="Images/Trifle.jpg" class="d-block rounded"
+              alt="Featured Product 5: A Christmas Trifle">
+          </div>
+        </div>
+        <!-- Slider Buttons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#featuredProductsCarousel" data-bs-slide="prev" style="left: calc(50% - 300px);">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#featuredProductsCarousel" data-bs-slide="next" style="left: calc(50% + 70px);">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
 
-    <footer>
-      <p>&copy; 2024 One Stop Shop. All rights reserved.</p>
-    </footer>
+    <!-- Product Listings -->
+    <div class="pb-3 listings-container">
+      <div class="header-container d-flex justify-content-between align-items-center">
+        <h2 class="text-center mt-2 mb-4">Our Food</h2>
 
-    <script src="script.js"></script>
+        <!-- Toggle Button -->
+        <button id="toggleViewBtn" class="btn btn-primary">Switch to List View</button>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <!-- Product Card 1 -->
+        <div class="col">
+          <div class="card h-100" style="background-color: #d4af37;">
+            <img src="Images/Ham.jpg" class="card-img-top" alt="Product 1 Image: A Christmas Ham">
+            <div class="card-body">
+              <h5 class="card-title">Christmas Ham</h5>
+              <p class="card-text">A deliciously cooked Christmas Ham.</p>
+              <h6>$99.99</h6>
+              <button class="btn btn-primary" 
+                      data-bs-toggle="modal" 
+                      data-bs-target="#productModal"
+                      data-product-name="Christmas Ham"
+                      data-product-description="A juicy Ham."
+                      data-product-price="$30"
+                      data-product-image="Images/Ham.jpg"
+                      data-product-size="3kg"
+                      data-product-weight="1kg"
+                      data-product-quantity="1"
+                      data-product-colour="Pink"
+                      data-product-material="Ham">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div class="col">
+          <div class="card h-100" style="background-color: #d4af37;">
+            <img src="Images/Turkey.jpg" class="card-img-top" alt="Product 2 Image: Christmas Turkey">
+            <div class="card-body">
+              <h5 class="card-title">Christmas Turkey</h5>
+              <p class="card-text">A sumptuous Turkey.</p>
+              <h6>$35</h6>
+              <button class="btn btn-primary" 
+                      data-bs-toggle="modal" 
+                      data-bs-target="#productModal"
+                      data-product-name="Christmas Turkey"
+                      data-product-description="A deliciously cooked Turkey."
+                      data-product-price="$35"
+                      data-product-image="Images/Turkey.jpg"
+                      data-product-size="3kg"
+                      data-product-weight="3kg"
+                      data-product-quantity="1"
+                      data-product-colour="White"
+                      data-product-material="Turkey">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div class="col">
+          <div class="card h-100" style="background-color: #d4af37;">
+            <img src="Images/Wine.jpg" class="card-img-top" alt="Product 3 Image:Mulled Wine">
+            <div class="card-body">
+              <h5 class="card-title">Traditional Mulled Wine</h5>
+              <p class="card-text">A Christmas Mulled Wine.</p>
+              <h6>$8</h6>
+              <button class="btn btn-primary" 
+                      data-bs-toggle="modal" 
+                      data-bs-target="#productModal"
+                      data-product-name="Mulled Wine"
+                      data-product-description="A warm glass of Mulled Wine."
+                      data-product-price="$8"
+                      data-product-image="Images/Wine.jpg"
+                      data-product-size="10 x 10 x 10 cm"
+                      data-product-weight="25g"
+                      data-product-quantity="1"
+                      data-product-colour="Red"
+                      data-product-material="Wine">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 4 -->
+        <div class="col">
+          <div class="card h-100" style="background-color: #d4af37;">
+            <img src="Images/Cake.jpeg" class="card-img-top" alt="Product 4 Image: A Christmas Cake">
+            <div class="card-body">
+              <h5 class="card-title">Homemade Christmas Cake</h5>
+              <p class="card-text">A Christmas Cake.</p>
+              <h6>$20</h6>
+              <button class="btn btn-primary" 
+                      data-bs-toggle="modal" 
+                      data-bs-target="#productModal"
+                      data-product-name="A Christmas Cake"
+                      data-product-description="A deliciously fruity Christmas Cake."
+                      data-product-price="$20"
+                      data-product-image="Images/Cake.jpeg"
+                      data-product-size="20cm x 20cm x 20cm"
+                      data-product-weight="3kg"
+                      data-product-quantity="1"
+                      data-product-colour="White and Brown"
+                      data-product-material="Cake">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 5 -->
+        <div class="col">
+          <div class="card h-100" style="background-color: #d4af37;">
+            <img src="Images/Pudding.jpg" class="card-img-top" alt="Product 5 Image: A Christmas Pudding">
+            <div class="card-body">
+              <h5 class="card-title">A Christmas Pudding</h5>
+              <p class="card-text">A beautiful Christmas Pudding best served with Brandy Butter.</p>
+              <h6>$15</h6>
+              <button class="btn btn-primary" 
+                      data-bs-toggle="modal" 
+                      data-bs-target="#productModal"
+                      data-product-name="Christmas Pudding"
+                      data-product-description="A beautiful Christmas Pudding."
+                      data-product-price="$15"
+                      data-product-image="Images/Pudding.jpg"
+                      data-product-size="10 x 20 x 15 cm"
+                      data-product-weight="2kg"
+                      data-product-quantity="1"
+                      data-product-colour="Brown"
+                      data-product-material="Pudding">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 6 -->
+        <div class="col">
+          <div class="card h-100" style="background-color: #d4af37;">
+            <img src="Images/Trifle.jpg" class="card-img-top" alt="Product Image 6 - Christmas Trifle">
+            <div class="card-body">
+              <h5 class="card-title">A nice creamy Trifle</h5>
+              <p class="card-text">Perfect for those who love a soft touch to their Christmas dessert.</p>
+              <h6>$10</h6>
+              <button class="btn btn-primary" 
+                      data-bs-toggle="modal" 
+                      data-bs-target="#productModal"
+                      data-product-name="Christmas Trifle"
+                      data-product-description="Perfect for those who love a soft touch to their Christmas dessert."
+                      data-product-price="$10"
+                      data-product-image="Images/Trifle.jpg"
+                      data-product-size="30 x 30 x 30 cm"
+                      data-product-weight="1kg"
+                      data-product-quantity="1"
+                      data-product-colour="Brown, White, Yellow, Red"
+                      data-product-material="Cream, Chocolate, Alcohol">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Product Details (Product Modal) -->
+      <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="productModalLabel">Product Details</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>More information about the product goes here.</p>
+              <button class="btn btn-success">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      </main>
+
+    <!-- Footer -->
+    <footer class="mb-0 p-2" style="background-color: #d4af37; opacity: 0.7;">
+        <p>&copy; 2024 One Stop Shop. All rights reserved.</p>
+      </footer>
+
+      <!-- Scripts -->
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+      <script>
+
+        const toggleBtn = document.getElementById("toggleViewBtn");
+        const listingsContainer = document.querySelector(".listings-container");
+
+        toggleBtn.addEventListener("click", function () {
+          if (listingsContainer.classList.contains("grid-view")) {
+            listingsContainer.classList.remove("grid-view");
+            listingsContainer.classList.add("list-view");
+            toggleBtn.textContent = "Switch to Grid View"; // Update button text
+          } else {
+            listingsContainer.classList.remove("list-view");
+            listingsContainer.classList.add("grid-view");
+            toggleBtn.textContent = "Switch to List View"; // Update button text
+          }
+        });
+
+        // When "View Details" Button is clicked
+        const productModal = document.getElementById("productModal");
+        productModal.addEventListener("show.bs.modal", function (event) {
+          const button = event.relatedTarget;
+
+          // Get info for product
+          const productName = button.getAttribute("data-product-name");
+          const productDescription = button.getAttribute("data-product-description");
+          const productPrice = button.getAttribute("data-product-price");
+          const productImage = button.getAttribute("data-product-image");
+          const productSize = button.getAttribute("data-product-size");
+          const productWeight = button.getAttribute("data-product-weight");
+          const productQuantity = button.getAttribute("data-product-quantity");
+          const productColour = button.getAttribute("data-product-colour");
+          const productMaterial = button.getAttribute("data-product-material");
+
+          const modalTitle = productModal.querySelector(".modal-title");
+          const modalBody = productModal.querySelector(".modal-body");
+
+          modalTitle.textContent = productName;
+          modalBody.innerHTML = `
+            <img src="${productImage}" alt="${productName}" class="img-fluid mb-3">
+            <p>${productDescription}</p>
+            <h6>${productPrice}</h6>
+            <p><strong>Size:</strong> ${productSize}</p>
+            <p><strong>Weight:</strong> ${productWeight}</p>
+            <p><strong>Quantity:</strong> ${productQuantity}</p>
+            <p><strong>Colour:</strong> ${productColour}</p>
+            <p><strong>Material:</strong> ${productMaterial}</p>
+            <button class="btn btn-success">Add to Cart</button>
+          `;
+        });
+
+      </script>
   </body>
 </html>
