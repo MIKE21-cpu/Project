@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <script src="./project.js"></script>
+    <link rel="stylesheet" type="text/css" href="./project.css"  />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - One-Stop-Christmas-Shop</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #d32f2f; /* Christmas Red */
+        padding: 10px 0;
+      }
+        nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .logo {
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex; /* Makes the list horizontal */
+        gap: 15px; /* Space between items */
+      }
+      nav ul li {
+        margin: 0;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 5px 10px;
+      }
+      nav ul li a:hover {
+        background-color: #a51d24; /* Darker red for hover effect */
+        border-radius: 5px;
+      header h1 {
+        margin: 0;
+        font-size: 2.5em;
+      }
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        color: #a51d24;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      ul li {
+        padding: 5px 0;
+      }
+      footer {
+        text-align: center;
+        padding: 10px 0;
+        background-color: #333;
+        color: white;
+        font-size: 0.9em;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <header>
+        <nav>
+          <a href="project.html" class="logo">One Stop Christmas Shop</a>
+          <ul>
+            <li><a href="project.html">Home</a></li>
+            <li><a href="ornaments.html">Ornaments</a></li>
+            <li><a href="food.html">Food</a></li>
+            <li><a href="clothes.html">Clothes</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </nav>
+      </header>
+    </header>
+    <main>
+        <div>
+            <div class="container" style="display: flex; justify-content: space-evenly;">
+                <div>
+                    <h2>current items in cart</h2>
+                    <div style="height: 60%; border-width: 2px; border-color: black; border: solid; overflow-y: scroll;">
+                        <div id="cart">
+                            <div class="cart_item">
+                                <p>Christmas ham</p>
+                                <p>99€</p>
+                            </div>
+                            <div class="cart_item">
+                                <p>Traditional muled wine</p>
+                                <p>8€</p>
+                            </div>
+                            <div class="cart_item">
+                                <p>Hangable tree decorations</p>
+                                <p>79.99€</p>
+                            </div>
+                            <div class="cart_item">
+                                <p>Woven stick baubles</p>
+                                <p>89.99€</p>
+                            </div>
+                            <div class="cart_item">
+                                <p>Christmas turkey</p>
+                                <p>35€</p>
+                            </div>
+                            <div class="cart_item">
+                                <p>Homemade christmas cake</p>
+                                <p>20€</p>
+                            </div>
+                            <div class="cart_item">
+                                <p>A christmas pudding</p>
+                                <p>15€</p>
+                            </div>
+                            <div class="cart_item">
+                                <p>Santa claus baubles</p>
+                                <p>99.99€</p>
+                            </div>
+                        </div>
+                    <div style="display: flex;">
+                        <p style="font-weight: bold; margin-right: 10px; margin-left: 10px;">Total: </p>
+                        <p id="cart_total">445.97 €</p>
+                    </div>
+                </div>
+                <div style="padding: 10px; margin: 10px;">
+                    <p>missing someting ? <a href="ornaments.html">check the store again</a></p>
+                </div>
+            </div>
+            <div style="width: 50%;">
+                <form action="/action_page.php">
+      
+                    <div>
+                      <div>
+                        <h3>Billing Address</h3>
+                        <label for="fname"> Full Name</label>
+                        <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="email" placeholder="john@example.com">
+                        <label for="adr">Address</label>
+                        <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" placeholder="New York">
+            
+                        <div>
+                          <div>
+                            <label for="state">State</label>
+                            <input type="text" id="state" name="state" placeholder="NY">
+                          </div>
+                          <div>
+                            <label for="zip">Zip</label>
+                            <input type="text" id="zip" name="zip" placeholder="10001">
+                          </div>
+                        </div>
+                      </div>
+            
+                      <div class="col-50">
+                        <h3>Payment</h3>
+                        <label for="cname">Name on Card</label>
+                        <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+                        <label for="ccnum">Credit card number</label>
+                        <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                        <label for="expmonth">Exp Month</label>
+                        <input type="text" id="expmonth" name="expmonth" placeholder="September">
+                        <div class="row">
+                          <div class="col-50">
+                            <label for="expyear">Exp Year</label>
+                            <input type="text" id="expyear" name="expyear" placeholder="2018">
+                          </div>
+                          <div>
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="123">
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                    <label>
+                      <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+                    </label>
+                    <input type="submit" value="Continue to checkout" class="btn">
+                  </form>
+            </div>
+        </div>
+    </main>
+    <footer>&copy; 2024 One-Stop-Christmas-Shop. All Rights Reserved.</footer>
+  </body>
+</html>

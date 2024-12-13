@@ -45,6 +45,7 @@ async function renderCart() {
   const response = await fetch("http://localhost:3000/cart");
   const cart = await response.json();
   const cartDiv = document.getElementById("cart");
+  const totalDiv = document.getElementById("cart_total");
   cartDiv.innerHTML = "";
 
   if (cart.length === 0) {
@@ -55,14 +56,16 @@ async function renderCart() {
   cart.forEach((item, index) => {
     const itemDiv = document.createElement("div");
     itemDiv.innerHTML = `
-            <p>${item.name} - $${item.price}</p>
+            <p>${item.name}</p>
+            <p>${item.price}</p>
             <button onclick="removeFromCart(${index})">Remove</button>
         `;
+    itemDiv.classList.add("cart_item")
     cartDiv.appendChild(itemDiv);
   });
 
   const total = cart.reduce((sum, item) => sum + item.price, 0);
-  cartDiv.innerHTML += `<h3>Total: $${total}</h3>`;
+  totalDiv.innerText = `${total} €`;
 }
 
 // Remove from cart
